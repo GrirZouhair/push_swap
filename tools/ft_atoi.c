@@ -1,53 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freeing.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 16:05:22 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/18 17:32:47 by zogrir           ###   ########.fr       */
+/*   Created: 2025/01/18 17:42:22 by zogrir            #+#    #+#             */
+/*   Updated: 2025/01/18 17:49:05 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
-
-void	ft_free(char **arr)
+#include "../push_swap.h"
+int	ft_atoi(const char *str)
 {
 	int	i;
+	int	sign;
+	int	result;
 
 	i = 0;
-	while (arr[i])
+	sign = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-')
 	{
-		free(arr[i]);
+		sign = -1;
 		i++;
 	}
-	free(arr);
-}
-
-void	free_stack_a(t_list **node)
-{
-	t_list *tmp;
-
-	if (!node || !*node)
-		return ;
-	while (*node)
+	else if (str[i] == '+')
 	{
-		tmp = (*node)->next;
-		free(*node);
-		*node = tmp;		
-	}
-	*node = NULL;
-}
-void	free_array(char **arr)
-{
-	int i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
 		i++;
 	}
-	free(arr);	
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return(result * sign);
 }
