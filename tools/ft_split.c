@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:52:09 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/16 17:50:43 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/18 09:17:29 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../push_swap.h"
 
-static int	mes_len(const char *s, char c)
+int	ft_len(const char *s, char c)
 {
 	int	existe;
 	int	counter;
@@ -54,7 +54,7 @@ static char	**mes_free(char **array, int size)
 	return (NULL);
 }
 
-static char	*mes_findndcpy(char const *s, char c, int i)
+static char	*ft_findndcpy(char const *s, char c, int i)
 {
 	int		j;
 	char	*str;
@@ -77,7 +77,7 @@ static char	*mes_findndcpy(char const *s, char c, int i)
 	return (str);
 }
 
-static char	**mes_allocat(char const *s, char c, char **array, int wordscount)
+static char	**ft_allocate(char const *s, char c, char **array, int wordscount)
 {
 	int		i;
 	int		j;
@@ -88,7 +88,7 @@ static char	**mes_allocat(char const *s, char c, char **array, int wordscount)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		array[j] = mes_findndcpy(s, c, i);
+		array[j] = ft_findndcpy(s, c, i);
 		if (!array[j])
 		{
 			mes_free(array, wordscount);
@@ -109,9 +109,9 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	wordscount = mes_len(s, c);
+	wordscount = ft_len(s, c);
 	array = (char **)malloc ((wordscount + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	return (mes_allocat(s, c, array, wordscount));
+	return (ft_allocate(s, c, array, wordscount));
 }
