@@ -1,57 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 14:54:31 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/18 10:00:08 by zogrir           ###   ########.fr       */
+/*   Created: 2025/01/18 12:20:03 by zogrir            #+#    #+#             */
+/*   Updated: 2025/01/18 13:26:48 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(int *pt1, int *pt2)
-{
-	int	tmp;
-	tmp = *pt1;
-	*pt1 = *pt2;
-	*pt2 = tmp;
-}
-
-int ft_dup_check(int *numbers, int n)
+int		ft_fill_stack(t_list **stack_a, char **arg)
 {
 	int	i;
-	int j;
-	int swapped;
-	
-	i = 0;
-	
-	while (i < n - 1)
+	int	j;
+	char **splited;
+
+	i = 1; // iterate at av
+	j = 0;
+	while (arg[i])
 	{
-		swapped = 0;
+		splited = ft_split(arg[i], ' ');
+		if (!arg)
+			return (NULL);
 		j = 0;
-		while (j < n -i -1)
+		while (splited[j])
 		{
-			if (numbers[j] > numbers[j + 1])
+			if (!ft_lstadd_back(stack_a, ft_atoi(splited[j])))
 			{
-				swap(&numbers[j], &numbers[j + 1]);
-				swapped = 1;
+				
 			}
 			j++;
 		}
 		i++;
-		if (swapped == 0)
-			break;
-	}
-	i = 0;
-	while (i < n - 1)
-	{
-		if (numbers[i] == numbers[i + 1])
-			return (0);
-		i++;
 	}
 	
-	return(1);
+	
 }
