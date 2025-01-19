@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:07:18 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/16 17:52:48 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/19 09:26:47 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,9 @@ int	ft_valid_num_check(const char *str)
 	
 	return (ft_free(splited), 1);
 }
+// #include<stdio.h>
+// int main()
+// {
+// 	char s[] = "12 1 4l";
+// 	printf("%d", ft_valid_num_check(s));
+// }

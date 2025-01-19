@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/18 17:42:22 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/18 17:49:05 by zogrir           ###   ########.fr       */
+/*   Created: 2025/01/19 10:02:43 by zogrir            #+#    #+#             */
+/*   Updated: 2025/01/19 10:02:45 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
 int	ft_atoi(const char *str)
 {
 	int	i;

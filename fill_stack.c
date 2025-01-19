@@ -6,12 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 12:20:03 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/18 18:38:23 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/19 15:00:28 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include<unistd.h>
+
 int ft_fill_stack(t_list **stack_a, char **arg)
 {
     int i;
@@ -25,8 +26,7 @@ int ft_fill_stack(t_list **stack_a, char **arg)
         if (!splited)
         {
             free_stack_a(stack_a);
-            write(2, "Error: Memory allocation failed\n", 33);
-            return (1);
+            return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m\n", 2), 0);
         }
         j = 0;
         while (splited[j])
@@ -67,8 +67,8 @@ int main()
         current = current->next;
     }
 
+	atexit(f);
     free_stack_a(&node);
     return (0);
 }
-
 */

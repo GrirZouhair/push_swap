@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 15:52:09 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/18 09:17:29 by zogrir           ###   ########.fr       */
+/*   Created: 2025/01/19 10:01:50 by zogrir            #+#    #+#             */
+/*   Updated: 2025/01/19 15:12:22 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
+#include "../push_swap.h"
 
 int	ft_len(const char *s, char c)
 {
@@ -34,6 +34,7 @@ int	ft_len(const char *s, char c)
 	}
 	return (counter);
 }
+
 
 static char	**mes_free(char **array, int size)
 {
