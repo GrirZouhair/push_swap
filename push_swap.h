@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:39 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/19 15:40:17 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/21 13:22:35 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct s_list
 	struct	s_list *next;
 } t_list;
 
+#define SA 0
+#define SB 1
+#define SS 2
+#define RA 3
+#define RB 4
+#define RR 5
 
 // utils
 char		**ft_split(char const *s, char c);
@@ -46,5 +52,8 @@ int			ft_dup_check(int *numbers, int n);
 int			ft_fill_stack(t_list **stack_a, char **arg);
 int			ft_parssing(char *str);
 
+//
+void		ft_sort_numbers(t_list **stack_a, t_list **stack_b, int size);
+int 		ft_swap_two_nums(t_list **stack_a, t_list **stack_b, int flag);
 
 #endif

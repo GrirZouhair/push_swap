@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:23:53 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/19 09:04:44 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/21 09:11:09 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int	ft_lstadd_back(t_list **alst, t_list *news)
 }
 
 
-
 /*
+#include<stdio.h>
 int main()
 {
 	int n1 = 1; 
@@ -98,7 +98,6 @@ int main()
 		printf("content  : %d\n", (int)current->content);
 		current = current->next;
 	}
-	
 	free(node1);
 	free(node2);
 	free(node3);

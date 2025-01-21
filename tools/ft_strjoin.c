@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 09:12:48 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/19 14:57:58 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/21 08:41:37 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ char *ft_strjoin(int size, char **strs, char sep)
 {
 	char	*args;
 	int		total_len;
-	int 	pos = 0;
+	int 	pos;
 
+	pos = 0;
 	total_len = 0;
 	if (size <= 0)
 	{
@@ -106,6 +107,7 @@ char *ft_strjoin(int size, char **strs, char sep)
 	args[pos] = '\0';
 	return (args);
 }
+
 /*
 #include<stdio.h> 
 int main()
