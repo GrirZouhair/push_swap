@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_two_nums.c                                 :+:      :+:    :+:   */
+/*   ft_swap_two_numbers.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:58:00 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/21 13:21:08 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/21 13:40:44 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ int ft_swap_two_nums(t_list **stack_a, t_list **stack_b, int flag)
 		if (!ft_swap(stack_a))
 			return (0);
 		ft_putstr_fd("sa", 1);
+	}
+	else if (flag == 1)
+	{
+		if (!ft_swap(stack_b))
+			return (0);
+		ft_putstr_fd("sb", 1);
+	}
+	else if (flag == 2)
+	{
+		if (!ft_swap(stack_a) || !ft_swap(stack_b))
+		return (0);
+		ft_putstr_fd("ss", 1);
 	}
 	return (1);
 }
