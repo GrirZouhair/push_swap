@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 09:12:48 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/21 08:41:37 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/22 11:31:24 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void ft_putstr_fd(char *s, int fd)
 	if (fd == -1 || !s)
 		return ;
 	while (*s)
-		write(fd, s++, 1);	
+		write(fd, s++, 1);
+	write(1, "\n", 1);	
 }
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)

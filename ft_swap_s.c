@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_two_numbers.c                              :+:      :+:    :+:   */
+/*   ft_swap_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:58:00 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/21 13:40:44 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/22 11:26:41 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int ft_swap(t_list **stack)
 	return (1);
 }
 
-int ft_swap_two_nums(t_list **stack_a, t_list **stack_b, int flag)
+int ft_swap_s(t_list **stack_a, t_list **stack_b, int flag)
 {
-	(void)stack_b;
 	if (flag == 0)
 	{
 		if (!ft_swap(stack_a))
@@ -60,7 +59,7 @@ int main()
 	ft_lstadd_back(&head, node2);
 	ft_lstadd_back(&head, node3);
 	
-	printf("%d\n", ft_swap_two_nums(&head, NULL, 0));
+	printf("%d\n", ft_swap_s(&head, NULL, 0));
 	
 	
 	//t_list *cur = head;

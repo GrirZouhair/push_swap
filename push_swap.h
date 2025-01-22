@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:39 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/21 13:22:35 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/22 11:09:23 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ typedef struct s_list
 #define RA 3
 #define RB 4
 #define RR 5
-
+#define RRA 6
+#define RRb 7
+#define RRR 8
 // utils
 char		**ft_split(char const *s, char c);
 int			ft_len(const char *s, char c);
@@ -45,6 +47,8 @@ void		free_array(char **arr);
 int			ft_lstadd_back(t_list **alst, t_list *news);
 t_list		*ft_lstnew(int content);
 int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_front(t_list **lst, t_list *new);
 
 // handle error
 int			ft_valid_num_check(const char *str);
@@ -54,6 +58,7 @@ int			ft_parssing(char *str);
 
 //
 void		ft_sort_numbers(t_list **stack_a, t_list **stack_b, int size);
-int 		ft_swap_two_nums(t_list **stack_a, t_list **stack_b, int flag);
-
+int 		ft_swap_s(t_list **stack_a, t_list **stack_b, int flag);
+int			ft_rotation_main(t_list **stack_a, t_list **stack_b, int flag);
+int			ft_rotation_reverse_main(t_list **stack, t_list **stack_b, int flag);
 #endif

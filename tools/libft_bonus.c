@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:23:53 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/21 09:11:09 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/22 11:09:05 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,20 @@ int	ft_lstadd_back(t_list **alst, t_list *news)
 	return (1);
 }
 
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (!new)
+		return ;
+	if (*lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+	{
+		*lst = new;
+	}
+}
 
 /*
 #include<stdio.h>
