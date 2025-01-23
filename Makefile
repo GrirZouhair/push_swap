@@ -6,7 +6,7 @@
 #    By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:51:32 by zogrir            #+#    #+#              #
-#    Updated: 2025/01/22 09:53:23 by zogrir           ###   ########.fr        #
+#    Updated: 2025/01/23 18:23:49 by zogrir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_MANDATORY = tools/freeing.c tools/ft_atoi.c tools/ft_split.c tools/libft_bonus.c tools/ft_strjoin.c \
-parssing.c fill_stack.c push_swap.c valid_num_check.c ft_swap_s.c ft_sort_numbers.c rotation.c
+SRC_MANDATORY = tools/freeing.c tools/ft_atoi.c tools/ft_split.c tools/libft_bonus.c tools/ft_strjoin.c tools/ft_indexing.c \
+tools/push.c \
+parssing.c fill_stack.c push_swap.c valid_num_check.c ft_swap_s.c ft_sort_numbers.c rotation.c ft_swap_four.c
 
 OBJ_MANDATORY = $(SRC_MANDATORY:.c=.o)
 
