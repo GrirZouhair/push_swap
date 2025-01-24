@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:23:53 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/22 11:09:05 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/01/24 11:24:14 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!ptr)
 		return (NULL);
 	ptr->content = content;
-	ptr->index   = -1;
+	ptr->position   = -1;
 	ptr->next    = NULL;
 	return (ptr);
 }
