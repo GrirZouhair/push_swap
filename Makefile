@@ -6,7 +6,7 @@
 #    By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:51:32 by zogrir            #+#    #+#              #
-#    Updated: 2025/01/24 09:14:54 by zogrir           ###   ########.fr        #
+#    Updated: 2025/02/05 12:54:22 by zogrir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_MANDATORY = tools/freeing.c tools/ft_atoi.c tools/ft_split.c tools/libft_bonus.c tools/ft_strjoin.c tools/ft_indexing.c \
 tools/push.c \
-parssing.c fill_stack.c push_swap.c valid_num_check.c ft_swap_s.c ft_sort_numbers.c rotation.c ft_swap_four.c ft_swap_five.c
+parssing.c fill_stack.c push_swap.c valid_num_check.c ft_swap_s.c ft_sorting_algo.c rotation.c ft_swap_four.c ft_swap_five.c ft_swap_long_num.c ft_indexing_ascending.c
 
 OBJ_MANDATORY = $(SRC_MANDATORY:.c=.o)
 

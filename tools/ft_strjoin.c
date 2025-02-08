@@ -6,22 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 09:12:48 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/22 11:31:24 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/04 01:10:21 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_putstr_fd(char *s, int fd)
-{
-	if (fd == -1 || !s)
-		return ;
-	while (*s)
-		write(fd, s++, 1);
-	write(1, "\n", 1);	
-}
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+static void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char		*destination;
 	unsigned char		*source;
@@ -41,7 +32,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-int	ft_strlen(const char *s)
+static int	ft_strlen(const char *s)
 {
 	int		i;
 
@@ -53,77 +44,59 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
-int calculate_length(int size, char **strs, int i)
+static int	calculate_length(int size, char **strs, int i)
 {
-	int len;
+	int	len;
 
 	if (i == size)
 		return (0);
-
 	len = ft_strlen(strs[i]);
 	if (i < size - 1)
 		len += 1;
 	return (len + calculate_length(size, strs, i + 1));
 }
 
-void join_strings(int size, char **strs, char sep, int i, char *args, int *pos)
+static void	ft_join(int size, char **strs, char *args)
 {
-	if (i == size)
+	int	i;
+	int	pos;
+	int	len;
+
+	pos = 0;
+	i = 0;
+	if (size == i)
 		return ;
-
-	int len = ft_strlen(strs[i]);
-	ft_memcpy(args + *pos, strs[i], len);
-	*pos += len;
-
-	if (i < size - 1)
+	while (i < size)
 	{
-		args[*pos] = sep;
-		(*pos)++;
+		len = ft_strlen(strs[i]);
+		ft_memcpy(args + pos, strs[i], len);
+		pos += len;
+		if (i < size - 1)
+		{
+			args[pos] = ' ';
+			(pos)++;
+		}
+		i++;
 	}
-
-	join_strings(size, strs, sep, i + 1, args, pos);
+	args[pos] = '\0';
 }
 
-char *ft_strjoin(int size, char **strs, char sep)
+char	*ft_strjoin(int size, char **strs)
 {
 	char	*args;
 	int		total_len;
-	int 	pos;
 
-	pos = 0;
 	total_len = 0;
 	if (size <= 0)
 	{
-		args = malloc(1);	
+		args = malloc(1);
 		args[0] = '\0';
 		return (args);
 	}
-
 	total_len = calculate_length(size, strs, 0);
 	args = malloc(total_len + 1);
 	if (!args)
 		return (free(args), NULL);
-
-	join_strings(size, strs, sep, 0, args, &pos);
-	args[pos] = '\0';
+	ft_join(size, strs, args);
 	return (args);
 }
-
-/*
-#include<stdio.h> 
-int main()
-{
-    
-    char *strs[] = {"zouhair", "amine", "salah", "bla", "bla"};
-    int size = 5;
-    char sep = ' ';
-
-    char *result = ft_strjoin(size, strs, sep);
-
-    printf("Joined string: %s\n", result);
-    free(result);
-	
-
-    return 0;
-}
-*/

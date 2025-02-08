@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:01:50 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/19 15:12:22 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/03 14:43:36 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	ft_len(const char *s, char c)
 	}
 	return (counter);
 }
-
 
 static char	**mes_free(char **array, int size)
 {

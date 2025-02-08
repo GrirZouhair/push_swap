@@ -6,9 +6,11 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:02:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/19 10:02:45 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/03 14:28:45 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	ft_atoi(const char *str)
 {
@@ -35,5 +37,14 @@ int	ft_atoi(const char *str)
 		result = (result * 10) + (str[i] - '0');
 		i++;
 	}
-	return(result * sign);
+	return (result * sign);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (fd == -1 || !s)
+		return ;
+	while (*s)
+		write(fd, s++, 1);
+	write(1, "\n", 1);
 }

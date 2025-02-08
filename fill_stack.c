@@ -6,69 +6,50 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 12:20:03 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/21 09:00:41 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/08 00:33:54 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include<unistd.h>
 
-int ft_fill_stack(t_list **stack_a, char **arg)
+static void	ft_fill(t_list **stack_a, char **splited)
 {
-    int i;
-    int j;
-    char **splited;
+	int	i;
+	t_list	*new_node;
 
-    i = 1;
-    while (arg[i])
-    {
-        splited = ft_split(arg[i], ' ');
-        if (!splited)
-        {
-            free_stack_a(stack_a);
-            return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m\n", 2), 0);
-        }
-        j = 0;
-        while (splited[j])
-        {
-            if (!ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(splited[j]))))
-            {
-                free_stack_a(stack_a);
-                free_array(splited);
-                write(2, "Error: Adding to list failed\n", 29);
-                exit(EXIT_FAILURE);
-            }
-            j++;
-        }
-        free_array(splited);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (splited[i])
+	{
+		new_node = ft_lstnew(ft_atoi(*splited));
+		if (!new_node)
+		{
+			free_stack(stack_a);
+			free_array(splited);
+			ft_putstr_fd("\033[1;31m🛑ERROR: Adding to list failed\033[0m\n", 2);
+			exit(0);
+		}
+		ft_lstadd_back(stack_a, new_node);
+		i++;
+	}
 }
 
-/*
-#include<stdio.h>
-int main()
+int	ft_fill_stack(t_list **stack_a, char **arg)
 {
-    t_list *node = NULL;
-    char *array[] = {"./program", "42 3 12", NULL};
+	int		i;
+	char	**splited;
 
-    if (ft_fill_stack(&node, array) != 0)
-    {
-        printf("Error occurred while filling stack\n");
-        return (1);
-    }
-
-    // Example of accessing the list
-    t_list *current = node;
-    while (current)
-    {
-        printf("%d\n", current->content);
-        current = current->next;
-    }
-
-	atexit(f);
-    free_stack_a(&node);
-    return (0);
+	i = 1;
+	while (arg[i])
+	{
+		splited = ft_split(arg[i], ' ');
+		if (!splited)
+		{
+			free_stack(stack_a);
+			return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m\n", 2), 0);
+		}
+		ft_fill(stack_a, splited);
+		free_array(splited);
+		i++;
+	}
+	return (1);
 }
-*/

@@ -6,19 +6,18 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:22:00 by zogrir            #+#    #+#             */
-/*   Updated: 2025/01/22 11:20:11 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/05 16:43:33 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_rotation(t_list **stack_a)
+static int	ft_rotation(t_list **stack_a)
 {
-	t_list *tmp;
-	
+	t_list	*tmp;
+
 	if (!stack_a)
 		return (0);
-	
 	tmp = *stack_a;
 	(*stack_a) = (*stack_a)->next;
 	tmp->next = NULL;
@@ -32,7 +31,7 @@ int	ft_rotation_main(t_list **stack_a, t_list **stack_b, int flag)
 	{
 		if (!ft_rotation(stack_a))
 			return (0);
-		ft_putstr_fd("ra", 1);		
+		ft_putstr_fd("ra", 1);
 	}
 	else if (flag == 4)
 	{
@@ -49,11 +48,10 @@ int	ft_rotation_main(t_list **stack_a, t_list **stack_b, int flag)
 	return (1);
 }
 
-
-int	ft_rotation_reverse(t_list **stack)
+static int	ft_rotation_reverse(t_list **stack)
 {
-	t_list 	*tmp;
-	t_list  *cur;
+	t_list	*tmp;
+	t_list	*cur;
 
 	cur = (*stack);
 	tmp = ft_lstlast(*stack);
@@ -64,7 +62,7 @@ int	ft_rotation_reverse(t_list **stack)
 	return (1);
 }
 
-int	ft_rotation_reverse_main(t_list **stack_a, t_list **stack_b, int flag)
+int	ft_rotation_rev_main(t_list **stack_a, t_list **stack_b, int flag)
 {
 	if (flag == 6)
 	{
@@ -76,7 +74,7 @@ int	ft_rotation_reverse_main(t_list **stack_a, t_list **stack_b, int flag)
 	{
 		if (!ft_rotation_reverse(stack_b))
 			return (0);
-		ft_putstr_fd("rrb", 1);	
+		ft_putstr_fd("rrb", 1);
 	}
 	else if (flag == 8)
 	{
@@ -86,27 +84,3 @@ int	ft_rotation_reverse_main(t_list **stack_a, t_list **stack_b, int flag)
 	}
 	return (1);
 }
-
-
-
-// #include<stdio.h>
-// int main()
-// {
-// 	t_list *node1 = ft_lstnew(3);
-// 	t_list *node2 = ft_lstnew(1);
-// 	t_list *node3 = ft_lstnew(2);
-
-// 	node1->next = node2;
-// 	node2->next = node3;
-	
-// 	ft_rotation_reverse_main(&node1, NULL, 6);
-// 	printf("\n");
-// 	t_list *cur = node1;
-	
-// 	while (cur)
-// 	{
-// 		printf("%d\n", cur->content);
-// 		cur = cur->next;
-// 	}
-	
-// }
