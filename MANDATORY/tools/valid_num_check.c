@@ -6,11 +6,11 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:07:18 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/08 00:08:30 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/09 12:58:48 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_valid_num_check(const char *str)
 {

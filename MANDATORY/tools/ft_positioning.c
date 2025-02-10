@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_indexing.c                                      :+:      :+:    :+:   */
+/*   ft_positioning.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 15:35:12 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/03 14:36:58 by zogrir           ###   ########.fr       */
+/*   Created: 2025/02/10 15:32:28 by zogrir            #+#    #+#             */
+/*   Updated: 2025/02/10 15:32:32 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_find_small(t_list *node)
 	return (small);
 }
 
-void	ft_indexing(t_list *stack)
+void	ft_positioning(t_list *stack)
 {
 	int	i;
 

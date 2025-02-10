@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:57:46 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/07 20:23:20 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/09 12:45:36 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_sendback(t_list **stack_a, t_list **stack_b)
 
 	while (*stack_b)
 	{
-		ft_indexing(*stack_b);
+		ft_positioning(*stack_b);
 		biggest = find_biggest(*stack_b);
 		pos = ft_find_small_pos(*stack_b, biggest);
 		size = ft_lstsize(*stack_b);

@@ -6,11 +6,11 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:54:31 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/08 00:10:40 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/09 14:57:48 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_bonus.h"
 
 static void	swap_num(int *pt1, int *pt2)
 {
@@ -69,13 +69,13 @@ int	ft_parssing(char *str)
 
 	count_word = ft_len(str, ' ');
 	if (count_word <= 0)
-		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m Empty\n", 2), 0);
+		return (ft_putstr_fd("Error", 2), 0);
 	nbrs = malloc(sizeof(int) * count_word);
 	if (!nbrs)
-		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0mfailed\n", 2), 0);
+		return (ft_putstr_fd("Error", 2), 0);
 	split_str = ft_split(str, ' ');
 	if (!split_str)
-		return (free(nbrs), ft_putstr_fd("\033[1;31m🛑ERROR:\033\n", 2), 0);
+		return (free(nbrs), ft_putstr_fd("Error", 2), 0);
 	j = 0;
 	while (j < count_word)
 	{

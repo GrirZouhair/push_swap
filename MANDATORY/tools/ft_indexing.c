@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_indexing_ascending.c                            :+:      :+:    :+:   */
+/*   ft_indexing.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_find_small_value(t_list *stack)
 {
@@ -39,7 +39,7 @@ static void	ft_index_value(t_list **stack, int smalllest, int i)
 	}
 }
 
-void	ft_indexing_ascending(t_list **stack)
+void	ft_indexing(t_list **stack)
 {
 	int		i;
 	int		smallest_value;

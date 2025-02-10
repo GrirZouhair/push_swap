@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:23:53 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/08 00:48:06 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/10 15:33:13 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,18 +85,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	{
 		*lst = new;
 	}
-}
-
-int	sorted(t_list *stack_a)
-{
-	t_list	*cur;
-
-	cur = stack_a;
-	while (cur->next)
-	{
-		if (cur->content > cur->next->content)
-			return (0);
-		cur = cur->next;	
-	}
-	return (1);
 }

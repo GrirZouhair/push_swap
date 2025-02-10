@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:39 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/08 00:48:20 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/09 14:45:54 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ void		free_stack(t_list **node);
 void		free_array(char **arr);
 int			ft_atoi(const char *s);
 void		ft_putstr_fd(char *s, int fd);
-void		ft_indexing(t_list *stack);
+void		ft_positioning(t_list *stack);
 int			ft_find_small(t_list *node);
 int			ft_find_small_pos(t_list *node, int small);
 char		**ft_split(char const *s, char c);
 int			ft_len(const char *s, char c);
-char		*ft_strjoin(int size, char **strs);
 t_list		*ft_lstnew(int content);
 t_list		*ft_lstlast(t_list *lst);
 int			ft_lstsize(t_list *lst);
@@ -54,7 +53,7 @@ int			ft_lstadd_back(t_list **alst, t_list *news);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_push_a(t_list **stack_a, t_list **stack_b);
 int			ft_push_b(t_list **stack_a, t_list **stack_b);
-
+char		*ft_join(int size, char **strs);
 int			ft_valid_num_check(const char *str);
 int			ft_parssing(char *str);
 int			ft_fill_stack(t_list **stack_a, char **arg);
@@ -65,7 +64,7 @@ int			ft_rotation_main(t_list **stack_a, t_list **stack_b, int flag);
 int			ft_rotation_rev_main(t_list **stack, t_list **stack_b, int flag);
 void		ft_swap_four(t_list **stack_a, t_list **stack_b);
 void		ft_swap_five(t_list **stack_a, t_list **stack_b);
-void		ft_indexing_ascending(t_list **stack);
+void		ft_indexing(t_list **stack);
 void		ft_sort_long_num(t_list **stack_a, t_list **stack_b);
 int			sorted(t_list *stack_a);
 

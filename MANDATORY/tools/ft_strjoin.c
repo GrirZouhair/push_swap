@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 09:12:48 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/04 01:10:21 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/09 12:49:56 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	calculate_length(int size, char **strs, int i)
 	return (len + calculate_length(size, strs, i + 1));
 }
 
-static void	ft_join(int size, char **strs, char *args)
+static void	ft_merge(int size, char **strs, char *args)
 {
 	int	i;
 	int	pos;
@@ -81,7 +81,7 @@ static void	ft_join(int size, char **strs, char *args)
 	args[pos] = '\0';
 }
 
-char	*ft_strjoin(int size, char **strs)
+char	*ft_join(int size, char **strs)
 {
 	char	*args;
 	int		total_len;
@@ -97,6 +97,6 @@ char	*ft_strjoin(int size, char **strs)
 	args = malloc(total_len + 1);
 	if (!args)
 		return (free(args), NULL);
-	ft_join(size, strs, args);
+	ft_merge(size, strs, args);
 	return (args);
 }

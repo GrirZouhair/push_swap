@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/08 01:04:10 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/10 15:31:19 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ int	main(int ac, char **av)
 			return (ft_putstr_fd("\033[1;31m🛑ERROR 1:\033[0m\n", 2), 0);
 		i++;
 	}
-	str = ft_strjoin(ac - 1, av + 1);
+	str = ft_join(ac - 1, av + 1);
 	if (!str || !ft_fill_stack(&stack_a, av) || !ft_parssing(str))
 		return (ft_putstr_fd("\033[1;31m🛑ERROR 2: \033[0m\n", 2), 0);
 	size = ft_lstsize(stack_a);
-	ft_indexing_ascending(&stack_a);
+	ft_indexing(&stack_a);
 	if (!sorted(stack_a))
 		ft_sorting_algo(&stack_a, &stack_b, size);
-		
 }

@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:22:00 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/05 16:43:33 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/10 13:27:00 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_rotation(t_list **stack_a)
 {
 	t_list	*tmp;
 
-	if (!stack_a)
+	if (!*stack_a)
 		return (0);
 	tmp = *stack_a;
 	(*stack_a) = (*stack_a)->next;

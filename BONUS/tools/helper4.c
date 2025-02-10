@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   helper4.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:18:03 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/03 14:55:14 by zogrir           ###   ########.fr       */
+/*   Created: 2025/02/10 15:29:15 by zogrir            #+#    #+#             */
+/*   Updated: 2025/02/10 15:30:48 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
 static int	ft_push(t_list **stack_a, t_list **stack_b)
 {
@@ -39,4 +39,15 @@ int	ft_push_b(t_list **stack_a, t_list **stack_b)
 		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m failed\n", 2), 0);
 	ft_putstr_fd("pb", 1);
 	return (1);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
