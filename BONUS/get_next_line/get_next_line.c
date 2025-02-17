@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 03:09:45 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/09 13:10:20 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/11 08:42:19 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,29 @@ char	*get_next_line(int fd)
 	line = ft_extract_line(leftover);
 	leftover = ft_update_leftover(leftover);
 	return (line);
+}
+// #include <fcntl.h>
+// #include <stdio.h>
+// #include <stdlib.h> // For free()
+#include<stdio.h>
+int main(void)
+{
+	int fd;
+	char *line;
+
+	fd = open("map.ber", O_RDONLY);
+	if (fd == -1) // Check if file opened successfully
+	{
+		perror("Error opening file");
+		return (1);
+	}
+
+	while ((line = get_next_line(fd))) // Read line by line
+	{
+		printf("%s", line);
+		free(line); // Free allocated memory to prevent leaks
+	}
+
+	close(fd);
+	return (0);
 }
