@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 12:20:03 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/09 12:51:05 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/17 12:18:35 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	ft_fill(t_list **stack_a, char **splited)
 	i = 0;
 	while (splited[i])
 	{
-		new_node = ft_lstnew(ft_atoi(*splited));
+		new_node = ft_lstnew(ft_atoi(splited[i]));
 		if (!new_node)
 		{
 			free_stack(stack_a);
