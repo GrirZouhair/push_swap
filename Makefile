@@ -6,7 +6,7 @@
 #    By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:51:32 by zogrir            #+#    #+#              #
-#    Updated: 2025/02/23 01:41:09 by zogrir           ###   ########.fr        #
+#    Updated: 2025/02/23 11:52:34 by zogrir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,5 +42,5 @@ $(NAME_BONUS) : $(OBJ_BONUS)
 clean :
 	rm -rf $(OBJ_MANDATORY) $(OBJ_BONUS)
 fclean : clean
-	rm -rf $(NAME) $(NAME)
+	rm -rf $(NAME) $(NAME_BONUS)
 re: fclean all

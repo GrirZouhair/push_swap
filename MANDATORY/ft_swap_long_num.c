@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:57:46 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/17 14:58:45 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/24 13:30:55 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	send_to_b(t_list **stack_a, t_list **stack_b, int pv)
 		}
 		else
 		{
-			ft_rotation_rev_main(stack_a, NULL, RRA);
+			ft_rotation_main(stack_a, NULL, RA);
 		}
 	}
 }

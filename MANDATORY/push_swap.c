@@ -6,11 +6,12 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/22 20:21:19 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/24 14:25:42 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	main(int ac, char **av)
 {
@@ -28,7 +29,10 @@ int	main(int ac, char **av)
 	while (i < ac)
 	{
 		if (!ft_valid_num_check(av[i]))
+		{
 			return (ft_putstr_fd("\033[1;31m🛑ERROR 1:\033[0m\n", 2), 0);
+			exit(0);
+		}
 		i++;
 	}
 	str = ft_join(ac - 1, av + 1);
@@ -38,4 +42,6 @@ int	main(int ac, char **av)
 	ft_indexing(&stack_a);
 	if (!sorted(stack_a))
 		ft_sorting_algo(&stack_a, &stack_b, size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 }
