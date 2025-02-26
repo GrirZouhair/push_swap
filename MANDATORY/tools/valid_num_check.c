@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:07:18 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/22 19:59:57 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/24 14:31:56 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ int	ft_valid_num_check(const char *str)
 	}
 	return (free_array(splited), 1);
 }
-

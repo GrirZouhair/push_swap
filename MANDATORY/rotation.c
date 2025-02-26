@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:22:00 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/23 01:40:43 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/24 14:30:22 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	ft_swap_s(t_list **stack_a, t_list **stack_b, int flag)
 	}
 	return (1);
 }
-
 
 static int	ft_rotation(t_list **stack_a)
 {

@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 12:20:03 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/17 12:18:35 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/02/24 14:57:18 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_fill_stack(t_list **stack_a, char **arg)
 		if (!splited)
 		{
 			free_stack(stack_a);
+			free_array(splited);
 			return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m\n", 2), 0);
 		}
 		ft_fill(stack_a, splited);
