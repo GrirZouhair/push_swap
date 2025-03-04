@@ -21,7 +21,7 @@ MANDATORY/tools/push.c MANDATORY/tools/parssing.c MANDATORY/tools/valid_num_chec
 MANDATORY/fill_stack.c MANDATORY/push_swap.c  MANDATORY/ft_sorting_algo.c MANDATORY/rotation.c MANDATORY/ft_swap_four.c MANDATORY/ft_swap_five.c MANDATORY/ft_swap_long_num.c
 
 SRC_BONUS = BONUS/get_next_line/get_next_line.c BONUS/get_next_line/get_next_line_utils.c BONUS/tools/check_operations.c BONUS/tools/freeing.c BONUS/tools/helper1.c BONUS/tools/helper2.c BONUS/tools/helper3.c \
-BONUS/tools/ft_split.c BONUS/tools/parssing.c  BONUS/tools/ft_strjoin.c BONUS/checker.c BONUS/ft_swap_s.c BONUS/rotation.c
+BONUS/tools/ft_split.c BONUS/tools/parssing.c BONUS/tools/helper4.c BONUS/tools/ft_strjoin.c BONUS/checker.c BONUS/ft_swap_s.c BONUS/rotation.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 OBJ_MANDATORY = $(SRC_MANDATORY:.c=.o)

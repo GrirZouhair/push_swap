@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 	}
 	str = ft_join(ac - 1, av + 1);
 	if (!str || !ft_fill_stack(&stack_a, av) || !ft_parssing(str))
-		return (ft_putstr_fd("Error", 2), 0);
+		return (free(str), ft_putstr_fd("Error", 2), 0);
 	if (!ft_check_operations(&opr))
 		return (free_stack_list(&stack_a), free_stack_list(&stack_b),
 			free_stack_opr(&opr), ft_putstr_fd("Error", 2), 0);
