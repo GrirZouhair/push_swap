@@ -35,6 +35,7 @@ static int	validate_and_parse_input(int ac, char **av)
 		ft_putstr_fd("\033[1;31m🛑ERROR 2:\033[0m\n", 2);
 		free(arr);
 	}
+	free(arr);
 	return (1);
 }
 
