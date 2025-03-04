@@ -86,28 +86,3 @@ char	*get_next_line(int fd)
 	leftover = ft_update_leftover(leftover);
 	return (line);
 }
-// #include <fcntl.h>
-// #include <stdio.h>
-// #include <stdlib.h> // For free()
-#include<stdio.h>
-int main(void)
-{
-	int fd;
-	char *line;
-
-	fd = open("map.ber", O_RDONLY);
-	if (fd == -1) // Check if file opened successfully
-	{
-		perror("Error opening file");
-		return (1);
-	}
-
-	while ((line = get_next_line(fd))) // Read line by line
-	{
-		printf("%s", line);
-		free(line); // Free allocated memory to prevent leaks
-	}
-
-	close(fd);
-	return (0);
-}
