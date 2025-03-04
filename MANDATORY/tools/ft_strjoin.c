@@ -90,13 +90,15 @@ char	*ft_join(int size, char **strs)
 	if (size <= 0)
 	{
 		args = malloc(1);
+		if (!args)
+			return (NULL);
 		args[0] = '\0';
 		return (args);
 	}
 	total_len = calculate_length(size, strs, 0);
 	args = malloc(total_len + 1);
 	if (!args)
-		return (free(args), NULL);
+		return (NULL);
 	ft_merge(size, strs, args);
 	return (args);
 }
