@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:54:31 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/09 12:58:31 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/14 03:04:34 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,31 +60,45 @@ static int	ft_dup_check(int *numbers, int n)
 	return (ft_result(numbers, n));
 }
 
-int	ft_parssing(char *str)
+int	*ft_parse_input(char *str, int *count_word)
 {
-	int		count_word;
 	int		*nbrs;
 	char	**split_str;
 	int		j;
 
-	count_word = ft_len(str, ' ');
-	if (count_word <= 0)
-		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0m Empty\n", 2), 0);
-	nbrs = malloc(sizeof(int) * count_word);
+	*count_word = ft_len(str, ' ');
+	if (*count_word <= 0)
+		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033Empty\n", 2), NULL);
+	nbrs = malloc(sizeof(int) * (*count_word));
 	if (!nbrs)
-		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033[0mfailed\n", 2), 0);
+		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033allocation failed\n", 2), NULL);
 	split_str = ft_split(str, ' ');
 	if (!split_str)
-		return (free(nbrs), ft_putstr_fd("\033[1;31m🛑ERROR:\033\n", 2), 0);
+		return (free(nbrs), ft_putstr_fd("\033🛑ERROR:\033failed\n", 2), NULL);
 	j = 0;
-	while (j < count_word)
+	while (j < *count_word)
 	{
 		nbrs[j] = ft_atoi(split_str[j]);
+		if (nbrs[j] == 0)
+		{
+			ft_putstr_fd("\033[1;31m🛑ERROR: Integer overflow\033[0m\n", 2);
+			return (free(nbrs), free_array(split_str), NULL);
+		}
 		j++;
 	}
+	return (free_array(split_str), nbrs);
+}
+
+int	ft_parssing(char *str)
+{
+	int	count_word;
+	int	*nbrs;
+
+	nbrs = ft_parse_input(str, &count_word);
+	if (!nbrs)
+		return (0);
 	if (!ft_dup_check(nbrs, count_word))
-		return (free_array(split_str), free(nbrs), 0);
-	free_array(split_str);
+		return (free(nbrs), 0);
 	free(nbrs);
 	return (1);
 }

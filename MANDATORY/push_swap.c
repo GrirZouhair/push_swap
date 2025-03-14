@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/06 15:32:06 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/14 02:55:08 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	validate_and_parse_input(int ac, char **av)
 	if (!arr || !ft_parssing(arr))
 	{
 		ft_putstr_fd("\033[1;31m🛑ERROR 2:\033[0m\n", 2);
-		free(arr);
+		return (free(arr), 0);
 	}
 	free(arr);
 	return (1);
