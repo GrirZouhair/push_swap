@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:02:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/15 06:41:20 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/15 07:51:47 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static long	ft_putnbr(int i, long nb, int sign, const char *str)
 	return ((int)(nb * sign));
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
@@ -50,8 +50,7 @@ int	ft_atoi(const char *str)
 	nb = ft_putnbr(i, nb, sign, str);
 	if (nb == ((long)INT_MAX + 1))
 	{
-		ft_putstr_fd("\033[1;31m🛑ERROR: Integer overflow\033[0m\n", 2);
-		return (0);
+		return (((long)INT_MAX + 1));
 	}
 	return ((int)nb);
 }

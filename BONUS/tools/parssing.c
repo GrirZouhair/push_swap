@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:54:31 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/14 03:05:33 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/15 07:58:11 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,14 @@ static int	ft_dup_check(int *numbers, int n)
 	return (ft_result(numbers, n));
 }
 
-int	*ft_parse_input(char *str, int *count_word)
+static int	*ft_parse_input(char *str, int *count_word)
 {
 	int		*nbrs;
 	char	**split_str;
 	int		j;
+	long	atoi_result;
 
 	*count_word = ft_len(str, ' ');
-	if (*count_word <= 0)
-		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033Empty\n", 2), NULL);
 	nbrs = malloc(sizeof(int) * (*count_word));
 	if (!nbrs)
 		return (ft_putstr_fd("\033[1;31m🛑ERROR:\033allocation failed\n", 2), NULL);
@@ -78,12 +77,13 @@ int	*ft_parse_input(char *str, int *count_word)
 	j = 0;
 	while (j < *count_word)
 	{
-		nbrs[j] = ft_atoi(split_str[j]);
-		if (nbrs[j] == 0)
+		atoi_result = ft_atoi(split_str[j]);
+		if (atoi_result == ((long)INT_MAX + 1))
 		{
 			ft_putstr_fd("\033[1;31m🛑ERROR: Integer overflow\033[0m\n", 2);
 			return (free(nbrs), free_array(split_str), NULL);
 		}
+		nbrs[j] = (int)atoi_result;
 		j++;
 	}
 	return (free_array(split_str), nbrs);

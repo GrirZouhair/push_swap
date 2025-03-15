@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 03:16:36 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/10 15:20:37 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/15 07:54:34 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**ft_split(char const *s, char c);
 void	free_stack_list(t_list **node);
 void	free_stack_opr(t_opr **node);
 void	free_array(char **arr);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_check_operations(t_opr **opr);
 char	*get_next_line(int fd);

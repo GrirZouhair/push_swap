@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:39 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/09 14:45:54 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/15 07:52:22 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_list
 
 void		free_stack(t_list **node);
 void		free_array(char **arr);
-int			ft_atoi(const char *s);
+long		ft_atoi(const char *s);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_positioning(t_list *stack);
 int			ft_find_small(t_list *node);
