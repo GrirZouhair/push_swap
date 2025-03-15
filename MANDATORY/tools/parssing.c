@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:54:31 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/15 06:29:35 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/15 06:41:37 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,6 @@ int	*ft_parse_input(char *str, int *count_word)
 	while (j < *count_word)
 	{
 		nbrs[j] = ft_atoi(split_str[j]);
-		if (nbrs[j] == 0)
-		{
-			ft_putstr_fd("\033[1;31m🛑ERROR: Integer overflow\033[0m\n", 2);
-			return (free(nbrs), free_array(split_str), NULL);
-		}
 		j++;
 	}
 	return (free_array(split_str), nbrs);

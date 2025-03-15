@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:02:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/15 06:29:50 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/15 06:41:20 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ int	ft_atoi(const char *str)
 	}
 	nb = ft_putnbr(i, nb, sign, str);
 	if (nb == ((long)INT_MAX + 1))
+	{
+		ft_putstr_fd("\033[1;31m🛑ERROR: Integer overflow\033[0m\n", 2);
 		return (0);
+	}
 	return ((int)nb);
 }
 
