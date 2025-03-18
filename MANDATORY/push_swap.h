@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:11:39 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/15 07:52:22 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/18 10:36:23 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ char		*ft_join(int size, char **strs);
 int			ft_valid_num_check(const char *str);
 int			ft_parssing(char *str);
 int			ft_fill_stack(t_list **stack_a, char **arg);
-
 void		ft_sorting_algo(t_list **stack_a, t_list **stack_b, int size);
 int			ft_swap_s(t_list **stack_a, t_list **stack_b, int flag);
 int			ft_rotation_main(t_list **stack_a, t_list **stack_b, int flag);

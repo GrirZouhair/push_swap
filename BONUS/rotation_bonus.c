@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotation.c                                         :+:      :+:    :+:   */
+/*   rotation_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 03:15:13 by zogrir            #+#    #+#             */
-/*   Updated: 2025/02/10 15:26:25 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/18 10:57:03 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,12 @@ static int	ft_rotation_reverse(t_list **stack)
 	t_list	*tmp;
 	t_list	*cur;
 
-	if (!*stack)
+	if (!*stack || !(*stack)->next)
 		return (0);
-	cur = (*stack);
+	cur = *stack;
 	tmp = ft_lstlast(*stack);
+	if (!cur->next)
+		return (0);
 	while (cur->next->next)
 		cur = cur->next;
 	cur->next = NULL;

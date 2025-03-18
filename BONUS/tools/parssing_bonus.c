@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parssing.c                                         :+:      :+:    :+:   */
+/*   parssing_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:54:31 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/15 07:58:11 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/18 10:58:01 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ static int	ft_result(int *numbers, int n)
 
 static int	ft_dup_check(int *numbers, int n)
 {
-	int	i;
-	int	j;
-	int	swapped;
+	int		i;
+	int		j;
+	int		swapped;
 
-	i = 0;
-	while (i++ < n - 1)
+	i = -1;
+	while (++i < n - 1)
 	{
 		swapped = 0;
-		j = 0;
-		while (j++ < n - i - 1)
+		j = -1;
+		while (++j < n - i - 1)
 		{
 			if (numbers[j] > numbers[j + 1])
 			{
