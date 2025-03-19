@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:02:43 by zogrir            #+#    #+#             */
-/*   Updated: 2025/03/15 07:51:47 by zogrir           ###   ########.fr       */
+/*   Updated: 2025/03/19 02:22:22 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static long	ft_putnbr(int i, long nb, int sign, const char *str)
 {
-	if (!(str[i] >= '0' && str[i] <= '9'))
-		return ((long)INT_MAX + 1);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = (nb * 10) + (str[i] - '0');
